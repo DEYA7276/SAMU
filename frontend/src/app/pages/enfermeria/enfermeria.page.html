@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Panel de Enfermería — SAMU</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onLogout()" title="Cerrar Sesión">
+        <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="nurse-welcome-banner">
+    <div class="banner-avatar">
+      <ion-icon name="medkit-outline"></ion-icon>
+    </div>
+    <div class="banner-info">
+      <h2>{{ usuario?.name || 'Personal de Enfermería' }}</h2>
+      <p class="role-badge">
+        <ion-icon name="shield-checkmark-outline"></ion-icon> Personal de Salud UTGZ
+      </p>
+      <p class="email-info">{{ usuario?.email }}</p>
+    </div>
+  </div>
+
+  <div class="quick-stats-grid">
+    <ion-card class="stat-card">
+      <ion-card-content>
+        <div class="stat-icon pending">
+          <ion-icon name="time-outline"></ion-icon>
+        </div>
+        <div class="stat-info">
+          <h3>Fichas por Validar</h3>
+          <p class="stat-number">1</p>
+          <span class="stat-desc">Requiere matrícula y foto</span>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="stat-card">
+      <ion-card-content>
+        <div class="stat-icon active">
+          <ion-icon name="clipboard-outline"></ion-icon>
+        </div>
+        <div class="stat-info">
+          <h3>Atenciones Hoy</h3>
+          <p class="stat-number">1</p>
+          <span class="stat-desc">En bitácora médica</span>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

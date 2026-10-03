@@ -1,0 +1,139 @@
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="login-wrapper">
+    <!-- Encabezado Institucional -->
+    <div class="brand-header">
+      <div class="logo-circle">
+        <ion-icon name="medkit-outline"></ion-icon>
+      </div>
+      <h1 class="brand-title">SAMU UTGZ</h1>
+      <p class="brand-subtitle">Sistema Integral de Servicios Médicos Estudiantiles</p>
+      <span class="institution-badge">Universidad Tecnológica de Gutiérrez Zamora</span>
+    </div>
+
+    <!-- Contenedor Principal de Autenticación -->
+    <div class="auth-card">
+      <!-- Selector de Modo: Login o Registro -->
+      <ion-segment [(ngModel)]="segment" mode="ios" class="custom-segment">
+        <ion-segment-button value="login">
+          <ion-icon name="log-in-outline"></ion-icon>
+          <ion-label>Iniciar Sesión</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="registro">
+          <ion-icon name="person-add-outline"></ion-icon>
+          <ion-label>Soy Alumno Nuevo</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <!-- ================= PESTAÑA: INICIAR SESIÓN ================= -->
+      <div *ngIf="segment === 'login'" class="form-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="input-group">
+            <ion-item lines="none" class="custom-input-item">
+              <ion-icon name="mail-outline" slot="start" class="input-icon"></ion-icon>
+              <ion-input
+                formControlName="email"
+                type="email"
+                label="Correo Institucional"
+                labelPlacement="floating"
+                placeholder="ejemplo@utgz.edu.mx"
+                autocomplete="email"
+              ></ion-input>
+            </ion-item>
+            <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="validation-error">
+              <ion-icon name="alert-circle-outline"></ion-icon> Ingresa un correo electrónico válido.
+            </div>
+          </div>
+
+          <div class="input-group">
+            <ion-item lines="none" class="custom-input-item">
+              <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon>
+              <ion-input
+                formControlName="password"
+                [type]="showPassword ? 'text' : 'password'"
+                label="Contraseña"
+                labelPlacement="floating"
+                placeholder="••••••••"
+                autocomplete="current-password"
+              ></ion-input>
+              <ion-button
+                fill="clear"
+                slot="end"
+                class="password-toggle-btn"
+                (click)="togglePassword()"
+              >
+                <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="validation-error">
+              <ion-icon name="alert-circle-outline"></ion-icon> La contraseña es obligatoria (mínimo 6 caracteres).
+            </div>
+          </div>
+
+          <ion-button
+            expand="block"
+            type="submit"
+            class="submit-button"
+            [disabled]="isLoading"
+          >
+            <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+            Ingresar al Sistema
+          </ion-button>
+        </form>
+
+        <!-- Accesos directos de prueba / desarrollo -->
+        <div class="demo-section">
+          <p class="demo-title">Accesos de Prueba Rápida:</p>
+          <div class="demo-buttons">
+            <ion-chip outline color="primary" (click)="setDemoUser('enfermeria')">
+              <ion-icon name="medical-outline"></ion-icon>
+              <ion-label>Enfermería</ion-label>
+            </ion-chip>
+            <ion-chip outline color="tertiary" (click)="setDemoUser('alumno')">
+              <ion-icon name="school-outline"></ion-icon>
+              <ion-label>Alumno (Juan)</ion-label>
+            </ion-chip>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= PESTAÑA: ALUMNO NUEVO / FICHA MÉDICA ================= -->
+      <div *ngIf="segment === 'registro'" class="form-container">
+        <div class="new-student-card">
+          <div class="student-hero-icon">
+            <ion-icon name="document-text-outline"></ion-icon>
+          </div>
+          <h3>Registro de Ficha Médica Inicial</h3>
+          <p class="student-desc">
+            Si eres alumno de nuevo ingreso, <strong>no requieres correo institucional, contraseña ni carrera</strong> en este paso.
+          </p>
+
+          <div class="info-alert">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <p>
+              Llena tus datos médicos y antecedentes de salud desde tu celular. Posteriormente, el personal de <strong>Enfermería</strong> en el consultorio asignará tu matrícula oficial, tomará tu fotografía y validará tu expediente.
+            </p>
+          </div>
+
+          <ion-button
+            expand="block"
+            class="submit-button start-ficha-btn"
+            routerLink="/ficha-medica"
+          >
+            <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+            Llenar mi Ficha Médica
+            <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pie de página -->
+    <div class="login-footer">
+      <p>© 2026 Universidad Tecnológica de Gutiérrez Zamora</p>
+      <p class="privacy-note">
+        <ion-icon name="shield-checkmark-outline"></ion-icon>
+        Los datos médicos están protegidos conforme a las normativas de confidencialidad institucional.
+      </p>
+    </div>
+  </div>
+</ion-content>

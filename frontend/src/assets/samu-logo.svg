@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Filtros de sombra y profundidad -->
+    <filter id="badgeShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0a1c35" flood-opacity="0.35"/>
+    </filter>
+    <filter id="textShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#071b30" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Gradientes -->
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8f4fd"/>
+      <stop offset="100%" stop-color="#cbe3f7"/>
+    </linearGradient>
+
+    <linearGradient id="scrubsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d5b96"/>
+      <stop offset="100%" stop-color="#13426e"/>
+    </linearGradient>
+
+    <linearGradient id="crocSkin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#48a868"/>
+      <stop offset="100%" stop-color="#2d7e48"/>
+    </linearGradient>
+
+    <linearGradient id="crocJaw" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fcd34d"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Círculo exterior azul oscuro -->
+  <circle cx="250" cy="240" r="215" fill="#0d2b52" stroke="#ffffff" stroke-width="10" filter="url(#badgeShadow)"/>
+  
+  <!-- Círculo interior celeste clínico -->
+  <circle cx="250" cy="240" r="195" fill="url(#badgeBg)"/>
+
+  <!-- Cruz médica de fondo suave -->
+  <path d="M215 110 h70 v260 h-70 z M130 195 h240 v70 h-240 z" fill="#b9dcfa" opacity="0.6"/>
+
+  <!-- ================= COCODRILO MASCOTA SAMU ================= -->
+  <g id="cocodrilo">
+    <!-- Cola del cocodrilo con crestas -->
+    <path d="M370 290 Q430 310 435 360 Q380 370 320 330 Z" fill="url(#crocSkin)"/>
+    <path d="M340 330 Q390 365 435 360 Q400 375 350 355 Z" fill="url(#crocJaw)"/>
+    <polygon points="400,285 415,280 410,298" fill="#236338"/>
+    <polygon points="420,310 435,315 425,330" fill="#236338"/>
+
+    <!-- Púas de la cabeza -->
+    <polygon points="260,70 280,50 288,75" fill="#236338"/>
+    <polygon points="290,75 320,60 320,90" fill="#236338"/>
+    <polygon points="325,95 355,85 348,115" fill="#236338"/>
+    <polygon points="350,120 375,125 360,150" fill="#236338"/>
+
+    <!-- Cabeza -->
+    <path d="M200 130 C190 90 270 65 330 95 C370 120 370 180 340 205 C310 225 250 220 200 200 C150 180 140 140 200 130 Z" fill="url(#crocSkin)"/>
+
+    <!-- Hocico alargado y nariz -->
+    <path d="M210 130 C150 125 130 155 160 180 C185 195 240 195 270 180 C270 140 250 130 210 130 Z" fill="url(#crocSkin)"/>
+    <!-- Fosas nasales -->
+    <ellipse cx="165" cy="148" rx="6" ry="8" fill="#1b4d2c"/>
+
+    <!-- Ojos grandes y amigables -->
+    <!-- Ojo izquierdo -->
+    <ellipse cx="230" cy="115" rx="22" ry="30" fill="#ffffff" stroke="#133d21" stroke-width="4"/>
+    <ellipse cx="236" cy="118" rx="12" ry="18" fill="#0f172a"/>
+    <circle cx="242" cy="110" r="5" fill="#ffffff"/>
+
+    <!-- Ojo derecho -->
+    <ellipse cx="280" cy="125" rx="25" ry="34" fill="#ffffff" stroke="#133d21" stroke-width="4"/>
+    <ellipse cx="274" cy="128" rx="14" ry="20" fill="#0f172a"/>
+    <circle cx="280" cy="120" r="6" fill="#ffffff"/>
+
+    <!-- Cejas expresivas -->
+    <path d="M208 90 Q235 80 252 98" stroke="#133d21" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M265 98 Q288 82 315 102" stroke="#133d21" stroke-width="7" stroke-linecap="round" fill="none"/>
+
+    <!-- Boca abierta sonriente -->
+    <path d="M165 175 Q210 230 300 180 Q250 240 175 195 Z" fill="#0f172a"/>
+    <!-- Lengua rosa -->
+    <path d="M205 205 Q235 185 265 200 Q240 225 210 215 Z" fill="#f43f5e"/>
+    <!-- Dientes blancos -->
+    <polygon points="175,178 185,188 190,178" fill="#ffffff"/>
+    <polygon points="200,176 210,188 218,176" fill="#ffffff"/>
+    <polygon points="275,182 285,190 292,180" fill="#ffffff"/>
+
+    <!-- Mandíbula inferior amarilla -->
+    <path d="M165 185 Q220 240 305 185 Q260 250 180 215 Z" fill="url(#crocJaw)" stroke="#d97706" stroke-width="3"/>
+
+    <!-- Torso y uniforme médico azul (Scrubs) -->
+    <path d="M150 250 L200 220 L320 225 L370 260 L360 380 L160 380 Z" fill="url(#scrubsGrad)"/>
+    <!-- Cuello en V y playera blanca interior -->
+    <polygon points="230,225 275,225 252,265" fill="#ffffff"/>
+    <polygon points="235,225 270,225 252,255" fill="#13426e"/>
+
+    <!-- Estetoscopio -->
+    <path d="M210 225 Q180 270 195 320 Q215 350 240 310" fill="none" stroke="#334155" stroke-width="9" stroke-linecap="round"/>
+    <path d="M295 230 Q325 275 305 320 Q285 345 255 310" fill="none" stroke="#334155" stroke-width="9" stroke-linecap="round"/>
+    <!-- Campana del estetoscopio -->
+    <circle cx="248" cy="312" r="16" fill="#cbd5e1" stroke="#475569" stroke-width="4"/>
+    <circle cx="248" cy="312" r="8" fill="#94a3b8"/>
+
+    <!-- Mano derecha con pulgar arriba (Thumbs up) -->
+    <g transform="translate(100, 160)">
+      <circle cx="45" cy="55" r="30" fill="url(#crocSkin)"/>
+      <!-- Pulgar arriba -->
+      <path d="M40 30 Q35 -5 50 -8 Q65 -5 60 30 Z" fill="url(#crocSkin)" stroke="#1a532d" stroke-width="3"/>
+      <!-- Dedos cerrados -->
+      <rect x="25" y="28" width="30" height="15" rx="7" fill="#399555" stroke="#1a532d" stroke-width="2"/>
+      <rect x="22" y="44" width="32" height="15" rx="7" fill="#399555" stroke="#1a532d" stroke-width="2"/>
+      <rect x="25" y="60" width="28" height="15" rx="7" fill="#399555" stroke="#1a532d" stroke-width="2"/>
+    </g>
+
+    <!-- Brazo izquierdo sosteniendo tabla médica (Clipboard) -->
+    <g transform="translate(240, 270)">
+      <!-- Tabla portapapeles -->
+      <rect x="35" y="5" width="85" height="110" rx="8" fill="#1e293b" stroke="#0f172a" stroke-width="3" transform="rotate(-10 60 50)"/>
+      <rect x="42" y="14" width="71" height="92" rx="4" fill="#ffffff" transform="rotate(-10 60 50)"/>
+      <rect x="60" y="-2" width="35" height="15" rx="4" fill="#94a3b8" transform="rotate(-10 60 50)"/>
+      <!-- Cruz médica azul en la hoja -->
+      <path d="M72 45 h15 v40 h-15 z M60 57 h40 v15 h-40 z" fill="#1d72b8" transform="rotate(-10 60 50)"/>
+      <!-- Mano verde sujetando la tabla -->
+      <ellipse cx="40" cy="70" rx="20" ry="24" fill="url(#crocSkin)" stroke="#1a532d" stroke-width="3"/>
+    </g>
+  </g>
+
+  <!-- ================= TEXTO 3D 'Samu' Y PULSO CARDIACO ================= -->
+  <g transform="translate(0, 30)">
+    <!-- Borde exterior oscuro para el texto -->
+    <text x="250" y="398" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="115" font-weight="900" fill="#071b30" stroke="#071b30" stroke-width="32" stroke-linejoin="round">Samu</text>
+    <text x="250" y="398" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="115" font-weight="900" fill="#0f2b4c" stroke="#0f2b4c" stroke-width="18" stroke-linejoin="round">Samu</text>
+    <!-- Texto blanco principal -->
+    <text x="250" y="398" text-anchor="middle" font-family="'Arial Black', Impact, sans-serif" font-size="115" font-weight="900" fill="#ffffff" filter="url(#textShadow)">Samu</text>
+
+    <!-- Línea de pulso cardiaco (ECG) azul cian debajo de Samu -->
+    <path d="M140 422 L215 422 L225 408 L238 438 L250 395 L262 445 L272 422 L360 422" fill="none" stroke="#00b4d8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
