@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { ApiService } from './api.service';
-import { AuthResponse, Usuario } from 'src/app/shared/models/samu.models';
+import { AuthResponse, Usuario } from '../../shared/models/samu.models';
 
 @Injectable({
   providedIn: 'root'

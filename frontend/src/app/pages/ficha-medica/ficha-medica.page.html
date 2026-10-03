@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Ficha Médica Estudiantil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onLogout()" title="Cerrar Sesión">
+        <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="student-welcome-banner">
+    <div class="banner-avatar">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </div>
+    <div class="banner-info">
+      <h2>¡Hola, {{ usuario?.name || 'Estudiante' }}!</h2>
+      <p class="role-badge">
+        <ion-icon name="school-outline"></ion-icon> Estudiante UTGZ
+      </p>
+      <p class="email-info">{{ usuario?.email }}</p>
+    </div>
+  </div>
+
+  <ion-card class="status-card">
+    <ion-card-header>
+      <ion-card-subtitle>ESTADO DE EXPEDIENTE</ion-card-subtitle>
+      <ion-card-title>Fase 1: Captura de Información Médica</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Bienvenido al sistema SAMU UTGZ. Desde aquí podrás registrar y mantener actualizada tu ficha médica personal.
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
