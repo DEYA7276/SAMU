@@ -96,126 +96,34 @@
         </div>
       </div>
 
-      <!-- ================= PESTAÑA: REGISTRO DE ALUMNO ================= -->
+      <!-- ================= PESTAÑA: ALUMNO NUEVO / FICHA MÉDICA ================= -->
       <div *ngIf="segment === 'registro'" class="form-container">
-        <div class="info-alert">
-          <ion-icon name="information-circle-outline"></ion-icon>
-          <p>
-            <strong>Atención Alumno:</strong> Regístrate con tus datos básicos para llenar tu ficha médica desde tu celular.
-            Tu <em>matrícula</em> y <em>fotografía oficial</em> serán registradas por el personal de enfermería en el consultorio.
+        <div class="new-student-card">
+          <div class="student-hero-icon">
+            <ion-icon name="document-text-outline"></ion-icon>
+          </div>
+          <h3>Registro de Ficha Médica Inicial</h3>
+          <p class="student-desc">
+            Si eres alumno de nuevo ingreso, <strong>no requieres correo institucional, contraseña ni carrera</strong> en este paso.
           </p>
-        </div>
 
-        <form [formGroup]="registroForm" (ngSubmit)="onRegistro()">
-          <div class="input-group">
-            <ion-item lines="none" class="custom-input-item">
-              <ion-icon name="person-outline" slot="start" class="input-icon"></ion-icon>
-              <ion-input
-                formControlName="name"
-                label="Nombre Completo"
-                labelPlacement="floating"
-                placeholder="Nombre y Apellidos"
-              ></ion-input>
-            </ion-item>
-          </div>
-
-          <div class="input-group">
-            <ion-item lines="none" class="custom-input-item">
-              <ion-icon name="mail-outline" slot="start" class="input-icon"></ion-icon>
-              <ion-input
-                formControlName="email"
-                type="email"
-                label="Correo Institucional o Personal"
-                labelPlacement="floating"
-                placeholder="tu.correo@utgz.edu.mx"
-              ></ion-input>
-            </ion-item>
-          </div>
-
-          <div class="input-group">
-            <ion-item lines="none" class="custom-input-item">
-              <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon>
-              <ion-input
-                formControlName="password"
-                type="password"
-                label="Crea una Contraseña"
-                labelPlacement="floating"
-                placeholder="Mínimo 6 caracteres"
-              ></ion-input>
-            </ion-item>
-          </div>
-
-          <div class="input-group">
-            <ion-item lines="none" class="custom-input-item">
-              <ion-icon name="school-outline" slot="start" class="input-icon"></ion-icon>
-              <ion-select
-                formControlName="carrera"
-                label="Carrera Universitaria"
-                labelPlacement="floating"
-                interface="action-sheet"
-                placeholder="Selecciona tu carrera"
-              >
-                <ion-select-option *ngFor="let carrera of carrerasUTGZ" [value]="carrera">
-                  {{ carrera }}
-                </ion-select-option>
-              </ion-select>
-            </ion-item>
-          </div>
-
-          <div class="row-two-col">
-            <div class="input-group">
-              <ion-item lines="none" class="custom-input-item">
-                <ion-icon name="transgender-outline" slot="start" class="input-icon"></ion-icon>
-                <ion-select
-                  formControlName="sexo"
-                  label="Sexo"
-                  labelPlacement="floating"
-                  interface="popover"
-                >
-                  <ion-select-option value="M">Masculino</ion-select-option>
-                  <ion-select-option value="F">Femenino</ion-select-option>
-                  <ion-select-option value="Otro">Otro</ion-select-option>
-                </ion-select>
-              </ion-item>
-            </div>
-
-            <div class="input-group">
-              <ion-item lines="none" class="custom-input-item">
-                <ion-icon name="calendar-outline" slot="start" class="input-icon"></ion-icon>
-                <ion-input
-                  formControlName="edad"
-                  type="number"
-                  label="Edad"
-                  labelPlacement="floating"
-                  placeholder="Años"
-                ></ion-input>
-              </ion-item>
-            </div>
-          </div>
-
-          <div class="input-group">
-            <ion-item lines="none" class="custom-input-item">
-              <ion-icon name="call-outline" slot="start" class="input-icon"></ion-icon>
-              <ion-input
-                formControlName="telefono"
-                type="tel"
-                label="Teléfono Móvil (10 dígitos)"
-                labelPlacement="floating"
-                placeholder="7841234567"
-              ></ion-input>
-            </ion-item>
+          <div class="info-alert">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <p>
+              Llena tus datos médicos y antecedentes de salud desde tu celular. Posteriormente, el personal de <strong>Enfermería</strong> en el consultorio asignará tu matrícula oficial, tomará tu fotografía y validará tu expediente.
+            </p>
           </div>
 
           <ion-button
             expand="block"
-            type="submit"
-            class="submit-button"
-            [disabled]="isLoading"
+            class="submit-button start-ficha-btn"
+            routerLink="/ficha-medica"
           >
-            <ion-icon name="checkmark-done-outline" slot="end"></ion-icon>
-            Registrarme y Llenar Ficha
+            <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+            Llenar mi Ficha Médica
+            <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
           </ion-button>
-        </form>
+        </div>
       </div>
     </div>
 

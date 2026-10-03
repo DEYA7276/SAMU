@@ -153,6 +153,46 @@
     gap: 12px;
   }
 
+  .new-student-card {
+    text-align: center;
+    padding: 10px 4px 6px;
+
+    .student-hero-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 12px;
+      background: #ccfbf1;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ion-icon {
+        font-size: 32px;
+        color: #0d9488;
+      }
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 6px;
+    }
+
+    .student-desc {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.4;
+      margin: 0 0 16px;
+    }
+
+    .start-ficha-btn {
+      margin-top: 16px;
+      --background: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+    }
+  }
+
   .info-alert {
     background: #ecfdf5;
     border: 1px solid #a7f3d0;
@@ -162,6 +202,7 @@
     display: flex;
     gap: 10px;
     align-items: flex-start;
+    text-align: left;
 
     ion-icon {
       color: #0d9488;

@@ -15,8 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'ficha-medica',
-    loadChildren: () => import('./pages/ficha-medica/ficha-medica.module').then(m => m.FichaMedicaPageModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./pages/ficha-medica/ficha-medica.module').then(m => m.FichaMedicaPageModule)
   },
   {
     path: 'enfermeria',
